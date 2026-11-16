@@ -1,0 +1,8 @@
+# Intel (x86_64) Macs: PyTorch stopped shipping x86_64 macOS wheels after 2.2.2,
+# and recent transformers / sentence-transformers require torch >= 2.6.
+# These pins are the newest versions that still work with torch 2.2.2.
+#   pip install -r requirements-intel-mac.txt && pip install -e ".[dev]"
+torch==2.2.2
+numpy<2
+transformers>=4.41,<4.50
+sentence-transformers>=3.0,<4
