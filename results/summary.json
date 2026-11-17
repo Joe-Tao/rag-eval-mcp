@@ -1,0 +1,335 @@
+{
+  "settings": {
+    "date": "2026-11-16",
+    "questions": 1244,
+    "limit": null,
+    "seed": 0,
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "candidates": 30,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "machine": "x86_64 Darwin, Python 3.11.13"
+  },
+  "summary": {
+    "bm25": {
+      "hit@1": 0.38183279742765275,
+      "hit@5": 0.6519292604501608,
+      "recall@5": 0.493588655003446,
+      "recall@10": 0.6216758812819906,
+      "mrr@10": 0.49216301740417495,
+      "latency_ms_p50": 0.5892938934266567,
+      "n": 1244
+    },
+    "vector": {
+      "hit@1": 0.34163987138263663,
+      "hit@5": 0.590032154340836,
+      "recall@5": 0.44608762530788254,
+      "recall@10": 0.5882265131260308,
+      "mrr@10": 0.4490261190220997,
+      "latency_ms_p50": 33.05875416845083,
+      "n": 1244
+    },
+    "hybrid": {
+      "hit@1": 0.41639871382636656,
+      "hit@5": 0.6639871382636656,
+      "recall@5": 0.5075678474794231,
+      "recall@10": 0.6422002077950631,
+      "mrr@10": 0.521395077323534,
+      "latency_ms_p50": 30.732775572687387,
+      "n": 1244
+    },
+    "hybrid_rerank": {
+      "hit@1": 0.46141479099678456,
+      "hit@5": 0.727491961414791,
+      "recall@5": 0.5726675789376754,
+      "recall@10": 0.6935910284784883,
+      "mrr@10": 0.5764836293574236,
+      "latency_ms_p50": 307.8919714316726,
+      "n": 1244
+    }
+  },
+  "by_category_hit@5": {
+    "Document Name": {
+      "bm25": 0.30392156862745096,
+      "n": 102,
+      "vector": 0.27450980392156865,
+      "hybrid": 0.29411764705882354,
+      "hybrid_rerank": 0.5196078431372549
+    },
+    "Parties": {
+      "bm25": 0.2647058823529412,
+      "n": 102,
+      "vector": 0.3235294117647059,
+      "hybrid": 0.3137254901960784,
+      "hybrid_rerank": 0.3333333333333333
+    },
+    "Expiration Date": {
+      "bm25": 0.8461538461538461,
+      "n": 78,
+      "vector": 0.8461538461538461,
+      "hybrid": 0.8974358974358975,
+      "hybrid_rerank": 0.8846153846153846
+    },
+    "Governing Law": {
+      "bm25": 0.9036144578313253,
+      "n": 83,
+      "vector": 0.6746987951807228,
+      "hybrid": 0.8674698795180723,
+      "hybrid_rerank": 0.9759036144578314
+    },
+    "Warranty Duration": {
+      "bm25": 0.7,
+      "n": 10,
+      "vector": 0.8,
+      "hybrid": 0.8,
+      "hybrid_rerank": 0.8
+    },
+    "Insurance": {
+      "bm25": 0.625,
+      "n": 32,
+      "vector": 0.90625,
+      "hybrid": 0.90625,
+      "hybrid_rerank": 0.9375
+    },
+    "Agreement Date": {
+      "bm25": 0.3978494623655914,
+      "n": 93,
+      "vector": 0.20430107526881722,
+      "hybrid": 0.3118279569892473,
+      "hybrid_rerank": 0.7204301075268817
+    },
+    "Effective Date": {
+      "bm25": 0.7285714285714285,
+      "n": 70,
+      "vector": 0.42857142857142855,
+      "hybrid": 0.5428571428571428,
+      "hybrid_rerank": 0.8
+    },
+    "Renewal Term": {
+      "bm25": 0.9615384615384616,
+      "n": 26,
+      "vector": 1.0,
+      "hybrid": 1.0,
+      "hybrid_rerank": 1.0
+    },
+    "Notice Period To Terminate Renewal": {
+      "bm25": 0.75,
+      "n": 16,
+      "vector": 1.0,
+      "hybrid": 0.8125,
+      "hybrid_rerank": 0.9375
+    },
+    "Termination For Convenience": {
+      "bm25": 0.9310344827586207,
+      "n": 29,
+      "vector": 1.0,
+      "hybrid": 0.9310344827586207,
+      "hybrid_rerank": 0.9655172413793104
+    },
+    "Cap On Liability": {
+      "bm25": 0.7954545454545454,
+      "n": 44,
+      "vector": 0.8409090909090909,
+      "hybrid": 0.8636363636363636,
+      "hybrid_rerank": 0.8636363636363636
+    },
+    "Non-Compete": {
+      "bm25": 0.5217391304347826,
+      "n": 23,
+      "vector": 0.8695652173913043,
+      "hybrid": 0.8260869565217391,
+      "hybrid_rerank": 0.8260869565217391
+    },
+    "Exclusivity": {
+      "bm25": 0.6060606060606061,
+      "n": 33,
+      "vector": 0.24242424242424243,
+      "hybrid": 0.48484848484848486,
+      "hybrid_rerank": 0.5151515151515151
+    },
+    "Competitive Restriction Exception": {
+      "bm25": 0.5625,
+      "n": 16,
+      "vector": 0.625,
+      "hybrid": 0.625,
+      "hybrid_rerank": 0.6875
+    },
+    "No-Solicit Of Employees": {
+      "bm25": 0.6,
+      "n": 10,
+      "vector": 0.8,
+      "hybrid": 1.0,
+      "hybrid_rerank": 0.8
+    },
+    "Change Of Control": {
+      "bm25": 0.9230769230769231,
+      "n": 26,
+      "vector": 0.9230769230769231,
+      "hybrid": 0.9615384615384616,
+      "hybrid_rerank": 0.8461538461538461
+    },
+    "Anti-Assignment": {
+      "bm25": 0.9027777777777778,
+      "n": 72,
+      "vector": 0.9027777777777778,
+      "hybrid": 0.9166666666666666,
+      "hybrid_rerank": 0.9166666666666666
+    },
+    "Revenue/Profit Sharing": {
+      "bm25": 0.34285714285714286,
+      "n": 35,
+      "vector": 0.4,
+      "hybrid": 0.42857142857142855,
+      "hybrid_rerank": 0.3142857142857143
+    },
+    "Minimum Commitment": {
+      "bm25": 0.65625,
+      "n": 32,
+      "vector": 0.4375,
+      "hybrid": 0.53125,
+      "hybrid_rerank": 0.59375
+    },
+    "Ip Ownership Assignment": {
+      "bm25": 0.5217391304347826,
+      "n": 23,
+      "vector": 0.6521739130434783,
+      "hybrid": 0.6521739130434783,
+      "hybrid_rerank": 0.5652173913043478
+    },
+    "License Grant": {
+      "bm25": 0.82,
+      "n": 50,
+      "vector": 0.72,
+      "hybrid": 0.92,
+      "hybrid_rerank": 0.86
+    },
+    "Non-Transferable License": {
+      "bm25": 0.8181818181818182,
+      "n": 22,
+      "vector": 0.7727272727272727,
+      "hybrid": 0.8181818181818182,
+      "hybrid_rerank": 0.8181818181818182
+    },
+    "Affiliate License-Licensee": {
+      "bm25": 0.8333333333333334,
+      "n": 12,
+      "vector": 0.75,
+      "hybrid": 0.8333333333333334,
+      "hybrid_rerank": 0.9166666666666666
+    },
+    "Audit Rights": {
+      "bm25": 0.8421052631578947,
+      "n": 38,
+      "vector": 0.631578947368421,
+      "hybrid": 0.8157894736842105,
+      "hybrid_rerank": 0.8421052631578947
+    },
+    "Uncapped Liability": {
+      "bm25": 1.0,
+      "n": 13,
+      "vector": 0.9230769230769231,
+      "hybrid": 1.0,
+      "hybrid_rerank": 1.0
+    },
+    "Liquidated Damages": {
+      "bm25": 0.7142857142857143,
+      "n": 14,
+      "vector": 0.5,
+      "hybrid": 0.7142857142857143,
+      "hybrid_rerank": 0.7142857142857143
+    },
+    "Covenant Not To Sue": {
+      "bm25": 0.5416666666666666,
+      "n": 24,
+      "vector": 0.2916666666666667,
+      "hybrid": 0.4583333333333333,
+      "hybrid_rerank": 0.4166666666666667
+    },
+    "Joint Ip Ownership": {
+      "bm25": 0.7142857142857143,
+      "n": 7,
+      "vector": 0.5714285714285714,
+      "hybrid": 0.5714285714285714,
+      "hybrid_rerank": 0.7142857142857143
+    },
+    "Irrevocable Or Perpetual License": {
+      "bm25": 0.9230769230769231,
+      "n": 13,
+      "vector": 0.7692307692307693,
+      "hybrid": 1.0,
+      "hybrid_rerank": 1.0
+    },
+    "Post-Termination Services": {
+      "bm25": 0.6896551724137931,
+      "n": 29,
+      "vector": 0.6206896551724138,
+      "hybrid": 0.7586206896551724,
+      "hybrid_rerank": 0.6896551724137931
+    },
+    "Volume Restriction": {
+      "bm25": 0.35294117647058826,
+      "n": 17,
+      "vector": 0.23529411764705882,
+      "hybrid": 0.29411764705882354,
+      "hybrid_rerank": 0.058823529411764705
+    },
+    "Rofr/Rofo/Rofn": {
+      "bm25": 0.7647058823529411,
+      "n": 17,
+      "vector": 0.7058823529411765,
+      "hybrid": 0.8235294117647058,
+      "hybrid_rerank": 0.7647058823529411
+    },
+    "Affiliate License-Licensor": {
+      "bm25": 0.8333333333333334,
+      "n": 6,
+      "vector": 0.6666666666666666,
+      "hybrid": 1.0,
+      "hybrid_rerank": 0.6666666666666666
+    },
+    "Third Party Beneficiary": {
+      "bm25": 0.5,
+      "n": 6,
+      "vector": 0.6666666666666666,
+      "hybrid": 0.6666666666666666,
+      "hybrid_rerank": 0.8333333333333334
+    },
+    "Most Favored Nation": {
+      "bm25": 0.6666666666666666,
+      "n": 3,
+      "vector": 0.6666666666666666,
+      "hybrid": 1.0,
+      "hybrid_rerank": 1.0
+    },
+    "No-Solicit Of Customers": {
+      "bm25": 0.7142857142857143,
+      "n": 7,
+      "vector": 0.2857142857142857,
+      "hybrid": 0.5714285714285714,
+      "hybrid_rerank": 0.7142857142857143
+    },
+    "Unlimited/All-You-Can-Eat-License": {
+      "bm25": 1.0,
+      "n": 3,
+      "vector": 0.6666666666666666,
+      "hybrid": 0.6666666666666666,
+      "hybrid_rerank": 0.6666666666666666
+    },
+    "Non-Disparagement": {
+      "bm25": 0.7142857142857143,
+      "n": 7,
+      "vector": 0.5714285714285714,
+      "hybrid": 0.5714285714285714,
+      "hybrid_rerank": 0.7142857142857143
+    },
+    "Source Code Escrow": {
+      "bm25": 1.0,
+      "n": 1,
+      "vector": 1.0,
+      "hybrid": 1.0,
+      "hybrid_rerank": 1.0
+    }
+  },
+  "random_hit@5": 0.24013950864830264
+}

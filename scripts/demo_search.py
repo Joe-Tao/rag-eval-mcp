@@ -10,10 +10,8 @@ from __future__ import annotations
 import argparse
 import time
 
-from rag_eval_mcp.chunking import chunk_text
-from rag_eval_mcp.cuad import load_cuad
-from rag_eval_mcp.index import Index
-from rag_eval_mcp.retrieval import METHODS, Retriever
+from rag_eval_mcp.factory import load_corpus, make_models, make_retriever
+from rag_eval_mcp.retrieval import METHODS
 
 
 def main() -> None:
@@ -23,28 +21,19 @@ def main() -> None:
     p.add_argument("--k", type=int, default=3)
     p.add_argument("--methods", nargs="+", default=list(METHODS), choices=METHODS)
     p.add_argument("--cuad", default="data/cuad_test.json")
-    p.add_argument("--max-contracts", type=int, default=None)
     p.add_argument("--fake-models", action="store_true", help="hashing embedder, no reranker")
     args = p.parse_args()
 
-    contracts, _, _ = load_cuad(args.cuad, args.max_contracts)
-    chunks = [ch for c in contracts for ch in chunk_text(c.doc_id, c.text)]
-
-    if args.fake_models:
-        from rag_eval_mcp.embedding import HashingEmbedder
-        embedder, reranker = HashingEmbedder(), None
-        args.methods = [m for m in args.methods if m != "hybrid_rerank"]
-    else:
-        from rag_eval_mcp.embedding import SentenceTransformerEmbedder
-        from rag_eval_mcp.rerank import CrossEncoderReranker
-        embedder, reranker = SentenceTransformerEmbedder(), CrossEncoderReranker()
+    corpus = load_corpus(args.cuad)
+    embedder, reranker = make_models(args.fake_models)
+    methods = [m for m in args.methods if m != "hybrid_rerank" or reranker is not None]
 
     t0 = time.perf_counter()
-    index = Index.build_cached(chunks, embedder, "cache")
-    print(f"index: {len(chunks)} chunks from {len(contracts)} contracts ({time.perf_counter() - t0:.1f}s)")
+    retriever = make_retriever(corpus, embedder, reranker)
+    print(f"index: {len(corpus.chunks)} chunks from {len(corpus.contracts)} contracts "
+          f"({time.perf_counter() - t0:.1f}s)")
 
-    retriever = Retriever(index, reranker)
-    for method in args.methods:
+    for method in methods:
         t0 = time.perf_counter()
         hits = retriever.search(args.query, method, k=args.k, doc_id=args.doc)
         print(f"\n=== {method} ({(time.perf_counter() - t0) * 1000:.0f} ms) ===")
